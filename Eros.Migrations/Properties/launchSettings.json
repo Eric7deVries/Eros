@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Eros.Migrations": {
+      "commandName": "Project"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker"
+    }
+  }
+}
