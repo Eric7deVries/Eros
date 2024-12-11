@@ -1,0 +1,20 @@
+services:
+  eros.api:
+    image: ${DOCKER_REGISTRY-}erosapi
+    build:
+      context: .
+      dockerfile: Eros.API/Dockerfile
+    ports:
+      - 8001:8080
+    depends_on:
+      - sqlserver
+    container_name: ErosContainer
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: SQLServerContainer
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_SA_PASSWORD=SuperSecret!!1234
+    ports:
+      - 8002:1433
